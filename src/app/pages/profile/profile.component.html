@@ -1,0 +1,89 @@
+<div class="profile-container">
+
+  <!-- Header -->
+  <div class="profile-header">
+    <div class="profile-left">
+      <img [src]="profile.profileImage"
+           class="profile-photo">
+      <div>
+        <h2>{{ profile.name }}</h2>
+        <p>{{ profile.role }}</p>
+      </div>
+    </div>
+
+    <button class="edit-btn" (click)="toggleEdit()">
+      {{ isEdit ? '💾 Save Changes' : '✏ Edit Profile' }}
+    </button>
+  </div>
+
+  <!-- Basic Info -->
+  <div class="profile-card">
+    <h4>Basic Information</h4>
+
+    <div class="profile-grid">
+
+      <div>
+        <label>Name</label>
+        <input [disabled]="!isEdit" [(ngModel)]="profile.name" />
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input [disabled]="!isEdit" [(ngModel)]="profile.email" />
+      </div>
+
+      <div>
+        <label>Phone</label>
+        <input [disabled]="!isEdit" [(ngModel)]="profile.phone"  />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Account Info -->
+  <div class="profile-card">
+    <h4>Account Information</h4>
+
+    <div class="profile-grid">
+
+      <div>
+        <label>Username</label>
+        <input [disabled]="!isEdit"
+               [(ngModel)]="profile.username" />
+      </div>
+
+      <div>
+        <label>Role</label>
+        <input disabled  [(ngModel)]="profile.role" />
+      </div>
+
+      <div>
+        <label>Join Date</label>
+        <input disabled [value]="profile.joinDate | date:'dd MMM yyyy'" />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="profile-card">
+    <h4>Change Password</h4>
+
+    <div class="profile-grid">
+
+      <div>
+        <label>New Password</label>
+        <input type="password" [(ngModel)]="password.new" />
+      </div>
+
+      <div>
+        <label>Confirm Password</label>
+        <input type="password" [(ngModel)]="password.confirm" />
+      </div>
+
+    </div>
+
+    <button class="save-btn"(click)="changePassword()">Update Password</button>
+  </div>
+
+</div>

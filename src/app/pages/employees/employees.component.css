@@ -1,0 +1,550 @@
+/* =========================
+   EMPLOYEE PAGE
+========================= */
+
+.employee-page {
+  padding: 28px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  color: #1f2937;
+}
+.top-section {
+  background: rgba(255,255,255,0.7);
+  padding: 22px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+/* =========================
+   HEADER
+========================= */
+
+.page-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #020617;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #111827, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-subtitle {
+  font-size: 15px;
+  color: #374151;
+  margin: 0;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.add-btn {
+  border: none;
+  border-radius: 12px;
+  height: 48px;
+  padding: 0 20px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #0047AB;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+.search-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 0 18px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #0047AB;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+  white-space: nowrap;
+  height:50px;
+}
+
+  .add-btn:hover,
+  .search-btn:hover {
+    transform: translateY(-2px);
+    background-color: #3b82f6;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+    color: #fff;
+  }
+
+/* =========================
+   CARDS
+========================= */
+
+.search-card,
+.table-card {
+  background: #fff;
+  border: none;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.search-input,
+.filter-select {
+  height: 50px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #111827;
+  transition: all 0.2s ease;
+}
+
+  .search-input::placeholder {
+    color: #6b7280;
+  }
+
+  .search-input:focus,
+  .filter-select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    outline: none;
+  }
+
+/* =========================
+   STATUS BADGES
+========================= */
+
+.status-active {
+  background-color: #d1fae5; /* light green */
+  color: #065f46; /* dark green text */
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.status-inactive {
+  background-color: #fee2e2; /* light red */
+  color: #991b1b; /* dark red text */
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table {
+  margin: 0;
+}
+
+  .table thead {
+    background: #f8fafc;
+  }
+
+    .table thead th {
+      padding: 18px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #374151;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+  .table tbody tr {
+    transition: all 0.2s ease;
+  }
+
+    .table tbody tr:hover {
+      background: #f8fbff;
+    }
+
+  .table tbody td {
+    padding: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+/* =========================
+   AVATAR
+========================= */
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+/* =========================
+   BADGES
+========================= */
+
+.role-badge,
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 15px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.employee-role {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.admin-role {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.active-status {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.inactive-status {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-btn {
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+/* 🔵 Edit Button */
+.btn-primary {
+  background-color: #0047AB;
+  color: white;
+  border: 1px solid #0047AB;
+  margin-right: 5px;
+}
+
+  /* Hover (thoda lighter blue for effect) */
+  .btn-primary:hover {
+    background-color: #3b82f6; /* tumhara old hover */
+    border-color: #3b82f6;
+    color: white;
+  }
+
+
+/* 🔴 Delete Button */
+.btn-danger {
+  background-color:#0047AB; /* same cobalt */
+  color: white;
+  border: 1px solid #0047AB;
+}
+
+  /* Hover same red */
+  .btn-danger:hover {
+    background-color: #ef4444;
+    border-color: #ef4444;
+    color: white;
+  }
+
+/* Icon spacing */
+.btn i {
+  margin-right: 5px;
+}
+
+
+td[data-label="Actions"] {
+  min-width: 210px;
+}
+
+  td[data-label="Actions"] .btn {
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 7px 14px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: #d1d5db;
+  margin: 25px auto;
+  opacity: 0.8;
+}
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  td[data-label="Actions"] {
+    min-width: 230px;
+  }
+
+    td[data-label="Actions"] .btn {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+
+
+  /* Page Padding */
+
+  .employee-page {
+    padding: 14px;
+  }
+
+  /* Header */
+
+  .top-section {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 14px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .add-btn {
+    width: 100%;
+  }
+
+  /* Search Section */
+
+  .row.g-3 {
+    row-gap: 12px !important;
+  }
+
+  .search-input,
+  .filter-select,
+  .search-btn {
+    width: 100%;
+  }
+
+  /* Table Scroll */
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table {
+    min-width: 700px;
+  }
+
+  /* Buttons */
+
+  .btn-sm {
+    white-space: nowrap;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+  td[data-label="Actions"] {
+    min-width: 250px;
+  }
+
+    td[data-label="Actions"] .btn {
+      font-size: 11px;
+      padding: 6px 10px;
+    }
+
+  .employee-page {
+    padding: 10px;
+  }
+
+  .top-section {
+    padding: 16px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .table-card {
+    border-radius: 18px;
+  }
+
+  .search-input,
+  .filter-select,
+  .search-btn {
+    height: 46px;
+  }
+
+  .btn-sm {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+/* =========================
+   PREMIUM EFFECTS
+========================= */
+
+/* Glass Effect Cards */
+
+.search-card,
+.table-card {
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.4);
+  transition: all 0.3s ease;
+}
+
+  .search-card:hover,
+  .table-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  }
+
+/* =========================
+   HEADER STYLING
+========================= */
+
+
+
+/* =========================
+   INPUT EFFECTS
+========================= */
+
+.search-input,
+.filter-select {
+  background: #f9fafb;
+}
+
+  .search-input:hover,
+  .filter-select:hover {
+    border-color: #93c5fd;
+  }
+
+/* =========================
+   TABLE PREMIUM LOOK
+========================= */
+
+.table tbody tr {
+  border-radius: 14px;
+}
+
+  .table tbody tr:hover {
+    background: linear-gradient(90deg, #f8fbff, #eef4ff);
+    transform: scale(1.003);
+  }
+
+/* =========================
+   AVATAR GLOW
+========================= */
+
+.avatar {
+  position: relative;
+}
+
+  .avatar::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.15);
+    z-index: -1;
+  }
+
+/* =========================
+   BADGES
+========================= */
+
+.role-badge,
+.status {
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.action-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+  .action-btn::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.25);
+    top: -100%;
+    left: 0;
+    transition: 0.3s;
+  }
+
+  .action-btn:hover::before {
+    top: 0;
+  }
+
+/* =========================
+   SMOOTH ANIMATION
+========================= */
+
+* {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   CUSTOM SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+.search-card .card-body {
+  padding: 22px;
+}

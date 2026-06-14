@@ -1,0 +1,187 @@
+
+<div class="p-3">
+  <div class="dashboard-page">
+
+    <div class="d-flex justify-content-between align-items-center px-4">
+      <h2 class="page-title">
+        Welcome to Dashboard
+      </h2>
+    </div>
+
+    <!-- Top Cards -->
+    <div class="row g-0 mb-4">
+
+      <div class="col-md-3">
+        <div class="stat-card blue">
+          <div>
+            <p><b>Total Tasks</b></p>
+            <h3>{{ totalTasks }}</h3>
+          </div>
+
+          <img src="assets/images/toogle.png"
+               class="img-large" />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="stat-card orange">
+          <div>
+            <p><b>Completed</b></p>
+            <h3>{{ completedTasks }}</h3>
+          </div>
+
+          <img src="assets/images/complete (2).png"
+               class="img-small" />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="stat-card green">
+          <div>
+            <p><b>Pending Tasks</b></p>
+            <h3>{{ pendingTasks }}</h3>
+          </div>
+
+          <img src="assets/images/pending.png"
+               class="img-medium" />
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="stat-card darkblue">
+          <div>
+            <p><b>Performance Score</b></p>
+            <h2>{{ performance }}%</h2>
+          </div>
+
+          <img src="assets/images/performance.png"
+               class="img-medium" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="row g-0">
+
+      <!-- Recent Tasks -->
+      <div class="col-md-6">
+
+        <div class="custom-card">
+
+          <h5 class="mb-3">
+            <b>Recent Tasks</b>
+          </h5>
+
+          <div class="task"
+               *ngFor="let task of recentTasks">
+
+            <input type="checkbox"
+                   [checked]="task.status == 'Completed'">
+
+            <span>{{ task.title }}</span>
+
+            <span class="badge"
+                  [ngClass]="
+                task.status === 'Completed'
+                  ? 'bg-success'
+                  : task.status === 'Pending'
+                  ? 'bg-warning'
+                  : task.status === 'Intermediate'
+                  ? 'bg-primary'
+                  : 'bg-secondary'
+              ">
+
+              {{ task.status }}
+
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Performance Chart -->
+    
+      <!-- Chart -->
+      <div class="col-md-6">
+        <div class="custom-card">
+
+          <h5 class="mb-3">
+            <b>Performance Overview</b>
+          </h5>
+
+          <div class="chart-wrapper">
+
+            <!-- Y Axis -->
+            <div class="y-axis">
+              <span>10</span>
+              <span>8</span>
+              <span>6</span>
+              <span>4</span>
+              <span>2</span>
+              <span>0</span>
+            </div>
+
+            <!-- Chart Area -->
+            <div class="chart-area">
+
+              <div class="chart">
+
+                <div class="group"
+                     *ngFor="let item of chartData">
+
+                  <!-- Completed -->
+                  <div class="bar"
+                       [style.height.px]="item.completed * 20"
+                       [attr.data-value]="item.completed">
+
+                  </div>
+
+                  <!-- Pending -->
+                  <div class="bar light"
+                       [style.height.px]="item.pending * 20"
+                       [attr.data-value]="item.pending">
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <!-- Months -->
+              <div class="months">
+
+                <span *ngFor="let item of chartData">
+
+                  {{
+              item.month == 1 ? 'Jan' :
+              item.month == 2 ? 'Feb' :
+              item.month == 3 ? 'Mar' :
+              item.month == 4 ? 'Apr' :
+              item.month == 5 ? 'May' :
+              item.month == 6 ? 'Jun' :
+              item.month == 7 ? 'Jul' :
+              item.month == 8 ? 'Aug' :
+              item.month == 9 ? 'Sep' :
+              item.month == 10 ? 'Oct' :
+              item.month == 11 ? 'Nov' :
+              'Dec'
+                  }}
+
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

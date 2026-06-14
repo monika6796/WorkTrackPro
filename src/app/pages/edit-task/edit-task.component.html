@@ -1,0 +1,73 @@
+<div class="p-3">
+  <div class="flex-grow-1">
+
+    <div class="d-flex justify-content-between align-items-center px-4">
+      <h3 class="different">Edit Task</h3>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="container">
+
+      <div class="login-card">
+
+        <!-- Task Title -->
+        <div class="mb-3">
+          <label>Task Title</label>
+          <input type="text" class="form-control" [(ngModel)]="task.title">
+        </div>
+
+        <!-- Status -->
+        <div class="mb-3">
+          <label>Status</label>
+          <select class="form-control" [(ngModel)]="task.status">
+            <option value="Pending">Pending</option>
+
+            <option value="Completed">Completed</option>
+
+            <option value="Intermediate">Intermediate</option>
+          </select>
+        </div>
+        <!-- Description -->
+
+        <div class="mb-3">
+
+          <label>Description</label>
+
+          <textarea class="form-control"
+                    rows="3"
+                    [(ngModel)]="task.description">
+
+</textarea>
+
+        </div>
+
+        <!-- Assigned To -->
+
+        <div class="mb-3">
+
+          <label>Assigned To</label>
+
+          <input type="number"
+                 class="form-control"
+                 [(ngModel)]="task.assignedTo">
+
+        </div>
+
+        <!-- Date -->
+        <div class="mb-3">
+          <label>Date</label>
+          <input type="date" class="form-control" [(ngModel)]="task.Date">
+        </div>
+
+        <!-- Button -->
+        <button class="btn btn-primary w-100 login-btn" (click)="updateTask()">
+          Update Task
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

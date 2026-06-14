@@ -1,0 +1,75 @@
+<div class="settings-container">
+  <div class="top-section d-flex justify-content-between align-items-center mb-4">
+    <h2 class="page-title">Settings</h2>
+    </div>
+   
+
+    <!-- 🎨 Appearance -->
+    <div class="setting-card premium">
+      <h5><i class="fa-solid fa-palette"></i> Appearance</h5>
+      <div class="setting-item column">
+        <label>Theme</label>
+        <span class="sub-text">Choose light or dark mode</span>
+        <div class="radio-group">
+          <label class="radio-box">
+            <input type="radio" value="light"
+                   [(ngModel)]="theme"
+                   (change)="changeTheme()">
+            <span>Light Mode</span>
+          </label>
+
+          <label class="radio-box">
+            <input type="radio" value="dark"
+                   [(ngModel)]="theme"
+                   (change)="changeTheme()">
+            <span>Dark Mode</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="setting-item">
+        <span>Font Size</span>
+        <select [(ngModel)]="fontSize" (change)="changeFont()" class="select-premium">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 🔔 Notifications -->
+    <div class="setting-card premium">
+      <h5><i class="fa-solid fa-bell"></i> Notifications</h5>
+
+      <div class="setting-item">
+        <span>Email Alerts</span>
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="emailNotif">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div class="setting-item">
+        <span>Task Reminder</span>
+        <label class="switch">
+          <input type="checkbox" [(ngModel)]="taskNotif">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- ⚙️ Preferences -->
+    <div class="setting-card premium">
+      <h5><i class="fa-solid fa-gear"></i> Preferences</h5>
+
+      <div class="setting-item">
+        <span>Default Page</span>
+        <select [(ngModel)]="defaultPage" (change)="changeDefaultPage()" class="select-premium">
+          <option value="dashboard">Dashboard</option>
+          <option value="tasks">Tasks</option>
+          <option value="performance-report">Performance</option>
+        </select>
+      </div>
+    </div>
+
+  </div>

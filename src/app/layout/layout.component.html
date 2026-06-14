@@ -1,0 +1,134 @@
+<div class="layout-container">
+
+  <!-- Overlay -->
+  <div class="overlay"
+       *ngIf="isSidebarOpen"
+       (click)="closeSidebar()">
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar"
+       [class.collapsed]="isSidebarCollapsed"
+       [class.mobile-open]="isSidebarOpen">
+
+    <!-- Mobile Close Button -->
+    <button class="close-btn"
+            (click)="closeSidebar()">
+
+      <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
+
+    <!-- Logo -->
+    <div class="sidebar-header">
+      <img src="assets/images/logo2.png"
+           class="logo" />
+    </div>
+
+    <!-- Menu -->
+    <div class="sidebar-menu">
+
+      <a routerLink="/app/dashboard"
+         routerLinkActive="active-link"
+         class="nav-link"
+         (click)="closeSidebar()">
+
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+
+      </a>
+
+      <a routerLink="/app/tasks"
+         routerLinkActive="active-link"
+         class="nav-link"
+         (click)="closeSidebar()">
+
+        <i class="fa-solid fa-list-check"></i>
+        <span>Tasks</span>
+
+      </a>
+
+
+
+      <a routerLink="/app/performance-report"
+         routerLinkActive="active-link"
+         class="nav-link"
+         (click)="closeSidebar()">
+
+        <i class="fa-solid fa-chart-line"></i>
+        <span>Performance</span>
+
+      </a>
+      <a routerLink="/app/employees"
+         routerLinkActive="active-link"
+         class="nav-link"
+         (click)="closeSidebar()">
+
+        <i class="fa-solid fa-users"></i>
+        <span>Employees</span>
+
+      </a>
+      <a routerLink="/app/settings"
+         routerLinkActive="active-link"
+         class="nav-link"
+         (click)="closeSidebar()">
+
+        <i class="fa-solid fa-gear"></i>
+        <span>Settings</span>
+
+      </a>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="sidebar-footer">
+
+      <div class="nav-link logout"
+           (click)="closeSidebar(); logout()">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <!-- Topbar -->
+    <div class="topbar">
+
+      <!-- Toggle -->
+      <button class="toggle-btn"
+              (click)="toggleSidebar()">
+
+        ☰
+
+      </button>
+
+      <!-- Profile -->
+      <div class="profile"
+           (click)="goToProfile()">
+
+        <img [src]="profileImage"
+             class="profile-img">
+
+        <span class="profile-name">
+          {{ employeeName }}
+        </span>
+
+      </div>
+
+    </div>
+
+    <!-- Page -->
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+
+</div>

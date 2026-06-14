@@ -1,0 +1,106 @@
+<div class="p-3">
+  <div class="top-section d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="page-title">
+        Performance Report
+      </h2>
+    </div>
+    <div class="dropdown">
+
+      <button class="month-select dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown">
+
+        <span class="label">
+          Select Month :
+        </span>
+
+        <span class="value">
+          {{ selectedMonth }}
+        </span>
+
+      </button>
+
+      <ul class="dropdown-menu dropdown-menu-end">
+
+        <li *ngFor="let m of months">
+
+          <a class="dropdown-item"
+             href="javascript:void(0)"
+             (click)="selectMonth(m)">
+
+            {{ m }}
+
+          </a>
+
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+    <div class="performance-page">
+      <!-- Header -->
+
+     
+
+      <!-- Main Card -->
+      <div class="card p-4 shadow-sm performance-card">
+
+        <!-- ROW 1 -->
+        <div class="row align-items-center">
+
+          <!-- Donut Chart -->
+          <div class="col-md-4 text-center border-end pe-1">
+            <div class="donut-chart">
+              <div class="inner-text">
+                <p class="mb-0">Performance</p>
+                <h2>{{ performance }}%</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metrics -->
+          <div class="col-md-8">
+            <h5>Key Metrics</h5>
+            <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+              <div>
+                <span class="dot"></span> Tasks Completed
+              </div>
+              <span class="badge text-dark">{{ completedTasks }}</span>
+            </div>
+            <div class="metric-item d-flex justify-content-between align-items-center mb-2">
+              <div>
+                <span class="dot"></span> Tasks Pending
+              </div>
+              <span class="badge text-dark">{{ pendingTasks }}</span>
+            </div>
+            <div class="metric-item d-flex justify-content-between align-items-center">
+              <div>
+                <span class="dot"></span> Avg. Hours Worked
+              </div>
+              <span class="badge text-dark">7.5 hrs</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ROW 2 (Divider) -->
+        <hr class="my-3">
+
+        <!-- ROW 3 (Chart) -->
+        <div class="row">
+          <div class="col-12">
+            <h5>Monthly Trends</h5>
+
+            <div class="chart-container">
+              <canvas id="lineChart"></canvas>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>

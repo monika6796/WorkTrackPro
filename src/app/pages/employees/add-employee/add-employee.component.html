@@ -1,0 +1,87 @@
+<div class="employee-form-page">
+
+  <div class="container">
+
+    <!-- Header -->
+    <div class="form-header">
+      <h2>Add Employee</h2>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Form Card -->
+    <div class="card form-card">
+
+      <div class="card-body">
+
+        <form (ngSubmit)="addEmployee()">
+
+          <div class="mb-3">
+            <label>Name</label>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Enter name"
+                   name="name"
+                   [(ngModel)]="employee.name">
+          </div>
+
+          <div class="mb-3">
+            <label>Email</label>
+            <input type="email"
+                   class="form-control"
+                   placeholder="Enter email"
+                   name="email"
+                   [(ngModel)]="employee.email">
+          </div>
+
+          <div class="mb-3">
+            <label>Password</label>
+            <input type="password"
+                   class="form-control"
+                   placeholder="Enter password"
+                   name="password"
+                   [(ngModel)]="employee.password">
+          </div>
+
+          <div class="row">
+
+            <div class="col-md-6 mb-3">
+              <label>Role</label>
+
+              <select class="form-control"
+                      name="role"
+                      [(ngModel)]="employee.role">
+
+                <option value="Admin">Admin</option>
+                <option value="Employee">Employee</option>
+
+              </select>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label>Status</label>
+
+              <select class="form-control"
+                      name="status"
+                      [(ngModel)]="employee.status">
+
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+
+              </select>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn btn-success w-100">
+            Save Employee
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
