@@ -1,0 +1,363 @@
+/* =========================
+   SETTINGS PAGE
+========================= */
+
+.settings-container {
+  padding: 28px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  color: #1f2937;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.top-section {
+  background: rgba(255,255,255,0.7);
+  padding: 22px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  margin-bottom: 22px;
+}
+
+.page-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #111827, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   SETTING CARD
+========================= */
+
+.setting-card.premium {
+  background: rgba(255,255,255,0.85);
+  border-radius: 22px;
+  padding: 22px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  transition: all 0.3s ease;
+}
+
+  .setting-card.premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  }
+
+/* =========================
+   CARD TITLE
+========================= */
+
+.setting-card h5 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+  .setting-card h5 i {
+    margin-right: 8px;
+    color: #2563eb;
+  }
+
+/* =========================
+   SETTING ITEMS
+========================= */
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+  .setting-item.column {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* =========================
+   TEXT
+========================= */
+
+  .setting-item span,
+  .setting-item label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+  }
+
+.sub-text {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 4px;
+}
+
+/* =========================
+   RADIO GROUP
+========================= */
+
+.radio-group {
+  display: flex;
+  gap: 14px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.radio-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+  .radio-box:hover {
+    border-color: #93c5fd;
+    background: #eff6ff;
+  }
+
+  .radio-box input {
+    accent-color: #2563eb;
+  }
+
+/* =========================
+   PREMIUM SELECT
+========================= */
+
+.select-premium {
+  min-width: 190px;
+  height: 46px;
+  padding: 0 42px 0 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background-color: #f8fafc;
+  color: #111827;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #2563eb 50%), linear-gradient(135deg, #2563eb 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+}
+
+  .select-premium:hover {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+  }
+
+  .select-premium:focus {
+    outline: none;
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+  }
+
+  .select-premium option {
+    background: #ffffff;
+    color: #111827;
+  }
+
+/* =========================
+   SWITCH
+========================= */
+
+.switch {
+  position: relative;
+  width: 52px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+  .switch input {
+    display: none;
+  }
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+  .slider::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3px;
+    top: 3px;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.3s;
+  }
+
+.switch input:checked + .slider {
+  background: #2563eb;
+}
+
+  .switch input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: #d1d5db;
+  margin: 25px auto;
+  opacity: 0.8;
+}
+
+/* =========================
+   SMOOTH EFFECTS
+========================= */
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .settings-container {
+    padding: 14px;
+  }
+
+  .top-section {
+    padding: 18px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .setting-card.premium {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  /* NORMAL ITEMS */
+  .setting-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+    /* COLUMN ITEMS */
+    .setting-item.column {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+  /* DROPDOWN */
+  .select-premium {
+    width: 100%;
+    min-width: 100%;
+  }
+
+  /* RADIO */
+  .radio-group {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .radio-box {
+    width: 100%;
+  }
+
+  /* SWITCH */
+  .switch {
+    margin-left: auto;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+  .settings-container {
+    padding: 10px;
+  }
+
+  .top-section {
+    padding: 16px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+
+  .setting-card.premium {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .setting-card h5 {
+    font-size: 15px;
+  }
+
+  .setting-item span,
+  .setting-item label {
+    font-size: 13px;
+  }
+
+  .select-premium {
+    width: 100%;
+    height: 44px;
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,116 @@
+<div class="login-page">
+
+ 
+  <!-- LEFT SIDE -->
+  <div class="login-left">
+
+    <!-- Brand -->
+    <div class="brand-row">
+      <img src="assets/images/logo2.png">
+    </div>
+
+    <!-- Hero Title -->
+    <div class="hero-title">
+      Smart Employee <br>
+      <span>Performance</span><br>
+      Tracking & <br>
+      Management
+    </div>
+
+    <!-- Subtitle -->
+    <div class="hero-subtitle">
+      Monitor employee productivity, manage tasks,
+      track progress, and generate real-time
+      performance insights — all in one platform.
+    </div>
+
+  
+
+    <!-- Stats -->
+    <div class="stats-row">
+
+      <div class="stat-item">
+        <h3>5K+</h3>
+        <p>EMPLOYEES</p>
+      </div>
+
+      <div class="stat-divider"></div>
+
+      <div class="stat-item">
+        <h3>98%</h3>
+        <p>EFFICIENCY</p>
+      </div>
+
+      <div class="stat-divider"></div>
+
+      <div class="stat-item">
+        <h3>24/7</h3>
+        <p>TRACKING</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="login-right">
+
+    <!-- 👇 auth-page KEEP -->
+    <div class="auth-page">
+
+      <div class="login-container">
+
+        <!-- 👇 SINGLE CARD -->
+        <div class="login-card">
+
+
+
+          <div class="mb-3">
+            <label>Email</label>
+            <input type="email" class="form-control" [(ngModel)]="email">
+          </div>
+
+          <div class="mb-3">
+            <label>Password</label>
+            <input type="password" class="form-control" [(ngModel)]="password">
+          </div>
+
+          <button type="button"
+                  (click)="login()"
+                  class="btn btn-primary w-100 login-btn">
+
+            Login
+
+          </button>
+          <p class="text-danger text-center mt-3">
+            {{ errorMessage }}
+          </p>
+          <div class="divider"></div>
+
+          <div class="small-text text-center">
+
+            <p>
+              <a routerLink="/forgot-password" class="signup">
+                Forgot Password?
+              </a>
+            </p>
+
+            <p>
+              Don't have an account?
+              <a routerLink="/signup" class="signup">
+                Sign Up
+              </a>
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+

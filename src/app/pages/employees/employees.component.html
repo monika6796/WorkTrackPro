@@ -1,0 +1,140 @@
+<div class="employee-page">
+
+  <div class="container-fluid">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <div class="top-section d-flex justify-content-between align-items-center mb-4">
+
+      <div>
+        <h2 class="page-title">
+          Employee Management
+        </h2>
+      </div>
+
+      <!-- ADD EMPLOYEE -->
+      <button class="btn add-btn" routerLink="/app/add-employee">
+
+        <i class="fa-solid fa-plus me-2"></i>
+
+        Add Employee
+
+      </button>
+
+    </div>
+
+    <!-- =========================
+         SEARCH + TABLE CARD
+    ========================== -->
+
+    <div class="card table-card">
+
+      <div class="card-body">
+
+        <!-- SEARCH SECTION -->
+        <div class="row g-3 align-items-center mb-4">
+
+          <div class="col-md-6">
+            <input type="text"
+                   class="form-control search-input"
+                   placeholder="Search employee..."
+                   [(ngModel)]="searchText"
+                   (input)="applyFilter()" />
+          </div>
+
+          <div class="col-md-4">
+            <select class="form-select filter-select">
+              <option>All Roles</option>
+              <option>Admin</option>
+              <option>Employee</option>
+            </select>
+          </div>
+
+          <div class="col-md-2">
+            <button class="btn search-btn w-100">
+              <i class="fa-solid fa-magnifying-glass me-2"></i>
+              Search
+            </button>
+          </div>
+
+        </div>
+
+        <div class="divider mb-4"></div>
+
+        <!-- TABLE -->
+        <div class="table-responsive">
+
+          <table class="table align-middle mb-0">
+
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Employee</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th class="text-center">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr *ngFor="let emp of employees; let i = index">
+
+                <td>{{ i + 1 }}</td>
+
+                <td>
+                  <div class="employee-info d-flex align-items-center gap-2">
+                    <div class="avatar">
+                      {{ emp.name?.charAt(0) }}
+                    </div>
+                    <span>{{ emp.name }}</span>
+                  </div>
+                </td>
+
+                <td>{{ emp.email }}</td>
+
+                <td>
+                  <span class="role-badge">
+                    {{ emp.role }}
+                  </span>
+                </td>
+
+                <td>
+                  <span class="status"
+                        [ngClass]="emp.status === 'Active' ? 'status-active' : 'status-inactive'">
+                    {{ emp.status }}
+                  </span>
+                </td>
+
+                <td class="text-center">
+
+                  <button class="btn btn-sm btn-primary me-2"
+                          [routerLink]="['/app/edit-employee', emp.id]">
+                    Edit
+                  </button>
+
+                  <button class="btn btn-sm btn-danger"
+                          (click)="deleteEmployee(emp.id)">
+                    Delete
+                  </button>
+
+                </td>
+
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

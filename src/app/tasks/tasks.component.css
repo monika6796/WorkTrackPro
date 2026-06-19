@@ -1,0 +1,332 @@
+/* Background */
+body {
+  background: #f5f7fb;
+  font-family: 'Segoe UI', sans-serif;
+}
+.tasks-page {
+  width: 100%;
+  overflow-x: hidden;
+}
+/* Topbar */
+.topbar {
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 10px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-top:30px;
+}
+/* Divider */
+.divider {
+  height: 1px;
+  width: 95%;
+  background: #d1d5db;
+  margin: 25px auto;
+  opacity:0.8;
+}
+  /* Heading */
+   h3 {
+    margin: 10px;
+    font-weight: 700;
+    color: black;
+   
+  }
+
+h4 {
+  margin: 10px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+
+/* Container */
+.container {
+  padding: 20px;
+}
+.page-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #020617;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #111827, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* ================= BUTTONS ================= */
+
+/* Common button */
+/* Base */
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  background: transparent;
+  transition: 0.2s;
+}
+.add-task-btn {
+  background: #0047AB;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  transition: 0.3s;
+  font-weight: 600;
+  height: 45px;
+  width: 150px;
+  color: white;
+}
+
+  .add-task-btn:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+  }
+/* 🔵 Edit Button */
+.btn-primary {
+  background-color: #0047AB;
+  color: white;
+  border: 1px solid #0047AB;
+  margin-right:5px;
+}
+
+  /* Hover (thoda lighter blue for effect) */
+  .btn-primary:hover {
+    background-color: #3b82f6; /* tumhara old hover */
+    border-color: #3b82f6;
+    color: white;
+  }
+
+
+/* 🔴 Delete Button */
+.btn-danger {
+  background-color: #0047AB; /* same cobalt */
+  color: white;
+  border: 1px solid #0047AB;
+}
+
+  /* Hover same red */
+  .btn-danger:hover {
+    background-color: #ef4444;
+    border-color: #ef4444;
+    color: white;
+  }
+
+/* Icon spacing */
+.btn i {
+  margin-right: 5px;
+}
+
+/* ================= TABLE ================= */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+.table {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  margin-left:30px;
+  margin-top: 40px;
+  border-collapse: separate; 
+  border-spacing: 0;
+}
+
+
+  /* Header */
+  .table thead th {
+    background-color: #f3f4f6;
+    color: #374151;
+    font-weight: 700;
+    
+  }
+
+  /* Row spacing */
+.table td,
+.table th {
+  padding: 18px;
+  font-weight:600;
+ 
+
+}
+
+  /* Row borders */
+  .table td {
+    border-top: 1px solid #e5e7eb;
+    vertical-align: text-top;
+  }
+
+  /* Alternate rows (IMPORTANT FIX) */
+  .table tbody tr:nth-child(even) td {
+    background-color: #f9fafb;
+  }
+
+  /* Hover effect */
+  .table tbody tr:hover td {
+    background-color: #f1f5f9;
+    transition: 0.2s;
+  }
+
+
+
+/* ================= BADGES ================= */
+
+.badge {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+  /* ✅ Completed (Green - Darker) */
+  .badge.bg-success {
+    background-color: #dcfce7 !important;
+    color: #166534 !important;
+  }
+
+  .badge.bg-warning {
+    background-color: #fef3c7 !important;
+    color: #92400e !important;
+  }
+  /* ✅ Intermediate (Light Blue) */
+  .badge.bg-primary {
+    background-color: #e0f7ff !important;
+    color: #1e3a8a !important;
+  }
+
+  
+/* ================= RESPONSIVE ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+
+  .table {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  h4 {
+    margin-left: 20px;
+  }
+
+  .divider {
+    width: 90%;
+  }
+
+  .add-task-btn {
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+  }
+}
+
+/* Mobile */
+/* =========================
+   📱 TASK PAGE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .tasks-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .p-3 {
+    padding: 10px !important;
+  }
+
+  /* Header */
+
+  .d-flex.justify-content-between.align-items-center {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 12px;
+    padding: 0 10px !important;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+  /* Divider */
+
+  .divider {
+    width: 100%;
+    margin: 18px 0;
+  }
+
+  /* Add Button */
+
+  .add-task-btn {
+    width: 100%;
+    height: 42px;
+    font-size: 14px;
+  }
+
+  /* Table Wrapper */
+
+  .table {
+     min-width: 650px;
+     width:100%;
+    margin:0;
+    overflow-x: auto;
+    border-radius: 10px;
+  }
+
+    .table th,
+    .table td {
+      padding: 12px;
+      font-size: 13px;
+    }
+
+  /* Action Buttons */
+
+  .btn-sm {
+    font-size: 11px;
+    padding: 5px 8px;
+    margin-bottom: 5px;
+  }
+
+  .btn i {
+    margin-right: 2px;
+  }
+
+  /* Badge */
+
+  .badge {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  .btn-sm {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

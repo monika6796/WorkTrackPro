@@ -1,0 +1,479 @@
+.performance-page {
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.1);
+  overflow: visible !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= CARD ================= */
+
+.card {
+  border-radius: 12px;
+  border: none;
+  transition: box-shadow 0.3s ease;
+  overflow: visible !important;
+  position: relative;
+  z-index: 1;
+}
+
+  .card:hover {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+
+.performance-card {
+  width: 100%;
+  overflow: visible !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= HEADINGS ================= */
+
+h3 {
+  margin-top: 8px;
+  font-weight: 700;
+  color: black;
+  margin-bottom: 0;
+}
+
+h5 {
+  font-weight: 900;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #d1d5db;
+  padding: 7px;
+  margin-top: 0;
+}
+
+/* ================= DONUT CHART ================= */
+
+.donut-chart {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-left: 60px;
+  margin-top: 3px;
+  margin-bottom: 2px;
+  transition: transform 0.5s ease;
+  background: none !important;
+}
+
+  .donut-chart:hover {
+    transform: scale(1.05) rotate(5deg);
+  }
+
+  .donut-chart::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: conic-gradient( #1f8f3a 0% 25%, #4caf50 25% 50%, #a5d6a7 50% 75%, #2e7d32 75% 88%, #e8f5e9 88% 100% );
+    animation: rotateDonut 50s linear infinite;
+    z-index: 0;
+  }
+
+  .donut-chart::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+@keyframes rotateDonut {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= INNER TEXT ================= */
+
+.inner-text {
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+  .inner-text p {
+    opacity: 0.6;
+    font-size: 22px;
+    margin: 0;
+  }
+
+  .inner-text h2 {
+    font-weight: bold;
+    font-size: 50px;
+    margin: 0;
+  }
+
+/* ================= METRICS ================= */
+
+.metric-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #d1d5db;
+  padding: 6px 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+  .metric-item:hover {
+    background: #f9fafb;
+    border-radius: 6px;
+    padding-left: 8px;
+  }
+
+  .metric-item .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #28a745;
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: transform 0.3s ease;
+  }
+
+  .metric-item:hover .dot {
+    transform: scale(1.4);
+  }
+
+  .metric-item div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+/* ================= BADGE ================= */
+
+.badge {
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-left: auto;
+  transition: all 0.3s ease;
+}
+
+.metric-item:hover .badge {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* ================= MONTH SELECT ================= */
+
+.month-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: all 0.3s ease;
+}
+
+  .month-select:hover {
+    background: #e5e7eb;
+    transform: scale(1.05);
+  }
+
+/* ================= DROPDOWN FIX ================= */
+
+.dropdown {
+  position: relative !important;
+  overflow: visible !important;
+  z-index: 99999 !important;
+}
+
+.dropdown-menu {
+  position: absolute !important;
+  top: 110% !important;
+  right: 0 !important;
+  left: auto !important;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  min-width: 220px;
+  max-height: 250px;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 8px 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  z-index: 999999 !important;
+  transition: all 0.25s ease;
+}
+
+  .dropdown-menu.show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.dropdown-item {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px 14px;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+  .dropdown-item:hover {
+    background-color: #f3f4f6;
+  }
+
+/* ================= CHART ================= */
+
+.chart-container {
+  position: relative;
+  margin-top: 20px;
+  width: 100%;
+  height: 220px;
+  overflow: visible !important;
+}
+
+/* ================= DIVIDER ================= */
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background: #d1d5db;
+  margin: 25px auto;
+  opacity: 0.8;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+
+  .performance-card {
+    padding: 20px !important;
+  }
+
+  .donut-chart {
+    margin: 0 auto;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .performance-page {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .p-3 {
+    padding: 12px !important;
+  }
+
+  .card,
+  .performance-card {
+    padding: 16px !important;
+    border-radius: 14px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h5 {
+    font-size: 18px;
+  }
+
+  .d-flex.justify-content-between {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+
+  .month-select {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .col-md-4,
+  .col-md-8 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .col-md-4 {
+    border-right: none !important;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .donut-chart {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto;
+  }
+
+    .donut-chart::after {
+      width: 190px;
+      height: 190px;
+    }
+
+    .donut-chart::before {
+      width: 145px;
+      height: 145px;
+    }
+
+  .inner-text h2 {
+    font-size: 36px;
+  }
+
+  .inner-text p {
+    font-size: 16px;
+  }
+
+  .metric-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+
+    .metric-item div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .metric-item .badge {
+      margin-left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 70px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+  .badge {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .chart-container {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+  .donut-chart {
+    width: 160px;
+    height: 160px;
+  }
+
+    .donut-chart::after {
+      width: 160px;
+      height: 160px;
+    }
+
+    .donut-chart::before {
+      width: 120px;
+      height: 120px;
+    }
+
+  .inner-text h2 {
+    font-size: 28px;
+  }
+
+  .inner-text p {
+    font-size: 14px;
+  }
+
+  .chart-container {
+    height: 180px;
+  }
+
+  .metric-item {
+    gap: 6px;
+  }
+
+    .metric-item div {
+      font-size: 12px;
+    }
+
+    .metric-item .badge {
+      font-size: 11px;
+      min-width: 60px;
+      padding: 4px 8px;
+    }
+
+  .month-select {
+    font-size: 13px;
+  }
+}
+
+/* ================= TOP SECTION ================= */
+
+.top-section {
+  background: rgba(255,255,255,0.7);
+  padding: 22px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  overflow: visible !important;
+  position: relative;
+  z-index: 9999 !important;
+}
+
+/* ================= HEADER ================= */
+
+.page-title {
+  font-size: 30px;
+  font-weight: 700;
+  color: #020617;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #111827, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
